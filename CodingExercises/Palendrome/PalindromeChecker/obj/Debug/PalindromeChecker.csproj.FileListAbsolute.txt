@@ -1,0 +1,6 @@
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\PushPay\PalindromeChecker\PalindromeChecker\bin\Debug\PalindromeChecker.exe.config
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\PushPay\PalindromeChecker\PalindromeChecker\obj\Debug\PalindromeChecker.csprojResolveAssemblyReference.cache
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\PushPay\PalindromeChecker\PalindromeChecker\bin\Debug\PalindromeChecker.exe
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\PushPay\PalindromeChecker\PalindromeChecker\bin\Debug\PalindromeChecker.pdb
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\PushPay\PalindromeChecker\PalindromeChecker\obj\Debug\PalindromeChecker.exe
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\PushPay\PalindromeChecker\PalindromeChecker\obj\Debug\PalindromeChecker.pdb

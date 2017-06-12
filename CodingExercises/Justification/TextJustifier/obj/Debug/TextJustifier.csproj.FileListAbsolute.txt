@@ -1,0 +1,6 @@
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\RealSelf\TextJustifier\TextJustifier\bin\Debug\TextJustifier.exe.config
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\RealSelf\TextJustifier\TextJustifier\bin\Debug\TextJustifier.exe
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\RealSelf\TextJustifier\TextJustifier\bin\Debug\TextJustifier.pdb
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\RealSelf\TextJustifier\TextJustifier\obj\Debug\TextJustifier.csprojResolveAssemblyReference.cache
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\RealSelf\TextJustifier\TextJustifier\obj\Debug\TextJustifier.exe
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\RealSelf\TextJustifier\TextJustifier\obj\Debug\TextJustifier.pdb

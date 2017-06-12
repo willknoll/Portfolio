@@ -1,0 +1,6 @@
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\CoffeeWalkinator\CoffeeWalkinator\bin\Debug\CoffeeWalkinator.exe.config
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\CoffeeWalkinator\CoffeeWalkinator\bin\Debug\CoffeeWalkinator.exe
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\CoffeeWalkinator\CoffeeWalkinator\bin\Debug\CoffeeWalkinator.pdb
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\CoffeeWalkinator\CoffeeWalkinator\obj\Debug\CoffeeWalkinator.csprojResolveAssemblyReference.cache
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\CoffeeWalkinator\CoffeeWalkinator\obj\Debug\CoffeeWalkinator.exe
+C:\Users\Docto\OneDrive\Documents\GitHub\Interview\CoffeeWalkinator\CoffeeWalkinator\obj\Debug\CoffeeWalkinator.pdb
