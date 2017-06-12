@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Print View Testing Page</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		
+	</head>
+	<body>
+			Use this file for ease of testing the print view layout
+
+			<!-- #### PRINT VIEW #### -->
+			<!-- This section is hidden from view.  It will be passed to a new window, for printing -->
+			<div id="printView">
+			<link rel="stylesheet" type="text/css" href="printView.css"/>
+			<div>
+				<img src="//volpinprops.com/wp-content/uploads/2011/09/Logo1.png" />
+					<br />
+				<span>Shipping Crate Calculator Output</span>
+			</div>
+			
+			<div class="printDetailSection firstSection">
+				<div class="printDetailContent">
+					<table class="printDetail">
+						<colgroup>
+							<col class="printLabelColumn">
+							<col class="printValueColumn">
+						</colgroup>
+						<thead><tr><th class="printSectionTitle" colspan="2">Input Values</th></tr></thead>
+						<tbody>
+							<tr>
+								<td class="printLabel">Length of item</td>
+								<td class="printData" id="printItemLength">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Width of item</td>
+								<td class="printData" id="printItemWidth">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Height of item</td>
+								<td class="printData" id="printItemHeight">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Plywood Thickness</td>
+								<td class="printData" id="printPlywoodThickness">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Frame Board Thickness</td>
+								<td class="printData" id="printFrameThickness">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Padding Thickness</td>
+								<td class="printData" id="printPaddingThickness">- - inches</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div style="float:left;">
+					<img class="printImage" src="//www.volpinprops.com/wp-content/uploads/2016/12/Shipping-Crate_open_1-cropped.png" />
+				</div>
+				<div class="printClear"></div>
+			</div>
+			
+			<div class="printDetailSection">
+				<div class="printDetailContent">
+					<table class="printDetail">
+						<colgroup>
+							<col class="printLabelColumn">
+							<col class="printValueColumn">
+						</colgroup>
+						<thead><tr><th class="printSectionTitle" colspan="2">FRAME: Cut 4 of Each</th></tr></thead>
+						<tbody>
+							<tr>
+								<td class="printLabel">Length of Frame Section B<sub>y</sub></td>
+								<td class="printData" id="printFrameBy">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Length of Frame Section B<sub>z</sub></td>
+								<td class="printData" id="printFrameBz">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Length of Frame Section C<sub>y</sub></td>
+								<td class="printData" id="printFrameCy">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Length of Frame Section C<sub>z</sub></td>
+								<td class="printData" id="printFrameCz">- - inches</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div style="float:left;">
+					<img class="printImage" src="//www.volpinprops.com/wp-content/uploads/2016/12/Shipping-Crate_1.5supports_shaded-cropped.png" />
+				</div>
+				<div class="printClear"></div>
+			</div>
+			
+			<div class="printDetailSection">
+				<div class="printDetailContent">
+					<table class="printDetail">
+						<colgroup>
+							<col class="printLabelColumn">
+							<col class="printValueColumn">
+						</colgroup>
+						<thead><tr><th class="printSectionTitle" colspan="2">PLYWOOD: Cut 2 of Each</th></tr></thead>
+						<tbody>
+							<tr>
+								<td class="printLabel">Plywood Section A</td>
+								<td class="printData" id="printPlywoodA">- - inches &times; - - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Plywood Section B</td>
+								<td class="printData" id="printPlywoodB">- - inches &times; - - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Plywood Section C</td>
+								<td class="printData" id="printPlywoodC">- - inches &times; - - inches</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div style="float:left;">
+					<img class="printImage" src="//www.volpinprops.com/wp-content/uploads/2016/12/Shipping-Crate_.375boards_shaded-cropped.png" />
+				</div>
+			</div>
+			</div>
+			<!-- #### END PRINT VIEW #### -->
+	</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Volpin Props - Shipping Crate Calculator</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="calculator.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="calculator.css" media="screen" />
+	</head>
+	<body>
+		<div id="body-container">
+			<div id="body-column-left">
+				<div id="nav-placeholder">
+					<!-- just fudging this in, for an idea of how things look -->
+					<img src="img/vp_nav.png" alt="Fake Navigation" class="nav-image"/>
+				</div>
+			</div>
+
+			<div id="body-column-right">
+				<div id="main-content">
+			
+			<!-- #### PRINT VIEW #### -->
+			<!-- This section is hidden from view.  It will be passed to a new window, for printing -->
+			<div id="printView">
+			<link rel="stylesheet" type="text/css" href="printView.css"/>
+			<div>
+				<img src="//volpinprops.com/wp-content/uploads/2011/09/Logo1.png" />
+					<br />
+				<span>Shipping Crate Calculator Output</span>
+			</div>
+			
+			<div class="printDetailSection firstSection">
+				<div class="printDetailContent">
+					<table class="printDetail">
+						<colgroup>
+							<col class="printLabelColumn">
+							<col class="printValueColumn">
+						</colgroup>
+						<thead><tr><th class="printSectionTitle" colspan="2">Input Values</th></tr></thead>
+						<tbody>
+							<tr>
+								<td class="printLabel">Length of item</td>
+								<td class="printData" id="printItemLength">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Width of item</td>
+								<td class="printData" id="printItemWidth">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Height of item</td>
+								<td class="printData" id="printItemHeight">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Plywood Thickness</td>
+								<td class="printData" id="printPlywoodThickness">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Frame Board Thickness</td>
+								<td class="printData" id="printFrameThickness">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Padding Thickness</td>
+								<td class="printData" id="printPaddingThickness">- - inches</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div style="float:left;">
+					<img class="printImage" src="//www.volpinprops.com/wp-content/uploads/2016/12/Shipping-Crate_open_1-cropped.png" />
+				</div>
+				<div class="printClear"></div>
+			</div>
+			
+			<div class="printDetailSection">
+				<div class="printDetailContent">
+					<table class="printDetail">
+						<colgroup>
+							<col class="printLabelColumn">
+							<col class="printValueColumn">
+						</colgroup>
+						<thead><tr><th class="printSectionTitle" colspan="2">FRAME: Cut 4 of Each</th></tr></thead>
+						<tbody>
+							<tr>
+								<td class="printLabel">Length of Frame Section B<sub>y</sub></td>
+								<td class="printData" id="printFrameBy">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Length of Frame Section B<sub>z</sub></td>
+								<td class="printData" id="printFrameBz">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Length of Frame Section C<sub>y</sub></td>
+								<td class="printData" id="printFrameCy">- - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Length of Frame Section C<sub>z</sub></td>
+								<td class="printData" id="printFrameCz">- - inches</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div style="float:left;">
+					<img class="printImage" src="//www.volpinprops.com/wp-content/uploads/2016/12/Shipping-Crate_1.5supports_shaded-cropped.png" />
+				</div>
+				<div class="printClear"></div>
+			</div>
+			
+			<div class="printDetailSection">
+				<div class="printDetailContent">
+					<table class="printDetail">
+						<colgroup>
+							<col class="printLabelColumn">
+							<col class="printValueColumn">
+						</colgroup>
+						<thead><tr><th class="printSectionTitle" colspan="2">PLYWOOD: Cut 2 of Each</th></tr></thead>
+						<tbody>
+							<tr>
+								<td class="printLabel">Plywood Section A</td>
+								<td class="printData" id="printPlywoodA">- - inches &times; - - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Plywood Section B</td>
+								<td class="printData" id="printPlywoodB">- - inches &times; - - inches</td>
+							</tr>
+							<tr>
+								<td class="printLabel">Plywood Section C</td>
+								<td class="printData" id="printPlywoodC">- - inches &times; - - inches</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div style="float:left;">
+					<img class="printImage" src="//www.volpinprops.com/wp-content/uploads/2016/12/Shipping-Crate_.375boards_shaded-cropped.png" />
+				</div>
+			</div>
+			</div>
+			<!-- #### END PRINT VIEW #### -->
+					
+					<div id="main-title" class="strong">Shipping Crate Calculator</div>
+
+					<div id="introduction">
+						Simply enter in values for the categories below and you'll be given a list
+						of dimensions to make your crate! Note that "Frame Boards" and "Plywood"
+						are pre-set at 1.5" and 0.375" respectively, since this is what I've found
+						to be the most reliable in my packaging.  <a href='#'>Check this blog post
+						to read in more detail about how to assemble, and pack your crate</a>.
+					</div>
+
+					<div id="user-dimensions">
+						<form>
+						<div class="content-left">
+							<div id="input-item-row" class="input-row">
+								<div class="input-column">
+									<label for="item-length" class="input-label">Length of Item <span id="item-length-tip" class="question" tip="Length, in inches, of the item you will be placing in the crate.">?</span></label>
+									<input type="text" class="input" id="item-length" placeholder="0.000" onchange="NormalizeMeasurements(this);"/>
+									<span class="input-units">inches</span>
+								</div>
+								<div class="input-column">
+									<label for="item-width" class="input-label">Width of Item <span id="item-width-tip" class="question" tip="Width, in inches, of the item you will be placing in the crate.">?</span></label>
+									<input type="text" class="input" id="item-width" placeholder="0.000" onchange="NormalizeMeasurements(this);"/>
+									<span class="input-units">inches</span>
+								</div>
+								<div class="input-column">
+									<label for="item-height" class="input-label">Height of Item <span id="item-height-tip" class="question" tip="Height, in inches, of the item you will be placing in the crate.">?</span></label>
+									<input type="text" class="input" id="item-height" placeholder="0.000" onchange="NormalizeMeasurements(this);"/>
+									<span class="input-units">inches</span>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div id="input-crate-row" class="input-row">
+								<div class="input-column">
+									<label for="plywood-thickness" class="input-label">Plywood Thickness <span id="plywood-thickness-tip" class="question" tip='3/8" is recommended.'>?</span></label>
+									<input type="text" class="input" id="plywood-thickness" placeholder="0.375" onchange="NormalizeMeasurements(this);"/>
+									<span class="input-units">inches</span>
+								</div>
+								<div class="input-column">
+									<label for="frame-thickness" class="input-label">Frame Board Thickness <span id="frame-thickness-tip" class="question" tip='1.5" is recommended.'>?</span></label>
+									<input type="text" class="input" id="frame-thickness" placeholder="1.500" onchange="NormalizeMeasurements(this);"/>
+									<span class="input-units">inches</span>
+								</div>
+								<div class="input-column">
+									<label for="padding-thickness" class="input-label">Padding Thickness <span class="question" tip="Uncompressed thickness of the padding you intend to use.  Note that this will be added to all 6 sides. The actual size of the padding pieces you will need is not calculated.">?</span></label>
+									<input type="text" class="input" id="padding-thickness" placeholder="1.000" onchange="NormalizeMeasurements(this);"/>
+									<span class="input-units">inches</span>
+								</div>
+							</div>
+							<div class="clear"></div>
+							<div id="error" class="clear">&nbsp;</div>
+							<div id="submit-row">
+								<div class="button-row">
+									<a href="#" class="submitButton" onclick="if(event.preventDefault) event.preventDefault(); else event.returnValue = false; CalculateCrate();">Calculate Parts</a>
+								</div>
+								<div class="toggle-row">
+									<a href="#" class="submitButton" onclick="if(event.preventDefault) event.preventDefault(); else event.returnValue = false; SwitchMeasurementUnits();">Toggle in/mm</a>
+								</div>
+								<div class="toggle-row">
+									<a href="#" id="printViewButton" class="submitButton submitButtonDisabled" onclick="if(event.preventDefault) event.preventDefault(); else event.returnValue = false; DoPrint();">Printable View</a>
+								</div>
+							</div>
+						</div>
+						<div class="content-right">
+							<img src="img/Shipping Crate_open_1-cropped.png" alt="" style="width:75%; height:75%;"/>
+						</div>
+						<div class="clear"></div>
+						</form>
+					</div> <!-- /user-dimensions -->
+
+					<div class="section-divider"></div>
+
+					<div id="results-frame-cuts">
+						<div class="section-title">CALCULATED FRAME CUTS: QTY 4x EACH</div>
+						<div class="note-row">Note: You will need four (4) of each measurement below, in order to complete your frames</div>
+						<div class="content-left">
+							<div id="output-frame-b-row" class="output-row">
+								<div class="output-column">
+									<label class="output-label">Length of Frame Section B<sub>y</sub></label>
+									<div class="output" id="byout">
+										<span class="output-value"><span id="BYLen" class="calculated-value">- -</span><span class="output-units">inches</span></span>								
+									</div>
+									<div class="output-bar output-yellow"></div>
+								</div>
+								<div class="output-column">
+									<label class="output-label">Length of Frame Section B<sub>z</sub></label>
+									<div class="output" id="bzout">
+										<span class="output-value"><span id="BZLen" class="calculated-value">- -</span><span class="output-units">inches</span></span>
+									</div>
+									<div class="output-bar output-red"></div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div id="output-frame-c-row" class="output-row">
+								<div class="output-column">
+									<label class="output-label">Length of Frame Section C<sub>y</sub></label>
+									<div class="output" id="cyout">
+										<span class="output-value"><span id="CYLen" class="calculated-value">- -</span><span class="output-units">inches</span></span>
+									</div>
+									<div class="output-bar output-green"></div>
+								</div>
+								<div class="output-column">
+									<label class="output-label">Length of Frame Section C<sub>z</sub></label>
+									<div class="output" id="czout">
+										<span class="output-value"><span id="CZLen" class="calculated-value">- -</span><span class="output-units">inches</span></span>
+									</div>
+									<div class="output-bar output-red"></div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="content-right">
+							<img src="img/Shipping Crate_1.5supports_shaded-cropped.png" alt="" style="width:75%; height:75%;"/>
+						</div>
+						<div class="clear"></div>
+					</div> <!-- /results-frame-cuts -->
+
+					<div class="section-divider"></div>
+
+					<div id="results-plywood-cuts">
+						<div class="section-title">CALCULATED PLYWOOD CUTS:  QTY 2x EACH</div>
+						<div class="note-row">Note: You will need two (2) of each measurement here, in order to complete your crate</div>
+						<div class="content-left">
+							<div id="output-side-row1" class="output-row">
+								<div class="output-column">
+									<label class="output-label">Size of Plywood Section A</label>
+									<div class="output" id="aout">
+										<span class="output-value"><span id="ALen" class="calculated-value">- -</span><span class="output-units">inches</span></span>
+										<span class="times">&times;</span>
+										<span class="output-value"><span id="AWid" class="calculated-value">- -</span><span class="output-units">inches</span></span>
+										
+									</div>
+									<div class="output-bar output-green"></div>
+								</div>
+								<div class="output-column">
+									<label class="output-label">Size of Plywood Section B</label>
+									<div class="output" id="bout">
+										<span class="output-value"><span id="BLen" class="calculated-value">- -</span><span class="output-units">inches</span></span>
+										<span class="times">&times;</span>
+										<span class="output-value"><span id="BWid" class="calculated-value">- -</span><span class="output-units">inches</span></span>
+									</div>
+									<div class="output-bar output-red"></div>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div id="output-side-row2" class="output-row">
+								<div class="output-column">
+									<label class="output-label">Size of Plywood Section C</label>
+									<div class="output" id="cout">
+										<span class="output-value"><span id="CLen" class="calculated-value">- -</span><span class="output-units">inches</span></span>
+										<span class="times">&times;</span>
+										<span class="output-value"><span id="CWid" class="calculated-value">- -</span><span class="output-units">inches</span></span>
+									</div>
+									<div class="output-bar output-yellow"></div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="content-right">
+							<img src="img/Shipping Crate_.375boards_shaded-cropped.png" alt="" style="width:75%; height:75%;"/>
+						</div>
+						<div class="clear"></div>
+					</div> <!-- /results-plywood-cuts -->
+
+				</div> <!-- / main-content -->
+			</div> <!-- / body-column-right -->
+
+			<div class="clear"></div>
+		</div>
+	</body>
+</html>

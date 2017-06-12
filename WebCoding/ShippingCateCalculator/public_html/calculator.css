@@ -1,0 +1,406 @@
+/*
+Copyright Volpin Props 2016
+*/
+
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #cccccc;
+	color: rgb(136, 136, 136);
+	font-size: 12px;
+	line-height: 1.7em;
+}
+
+#body-container {
+	box-sizing: border-box;
+}
+
+#body-column-left {
+	background-color: #fff;
+	width: 200px;
+	float: left;
+}
+
+.nav-image {
+	width: 190px;
+	height: auto;
+}
+
+#nav-placeholder {
+	margin: 5px;
+}
+
+#body-column-right {
+	background-color: #fff;
+	margin-left: 0px;
+	padding: 0px 0px 80px 0px; /* fudge some expra space at the bottom */
+}
+
+#main-content {
+	/*margin: 20px 10px 0px 40px;*/
+}
+
+#main-title {
+	text-transform: uppercase;
+	color: rgb(34, 34, 34);
+	position: relative;
+	font-size: 20px;
+	line-height: 26px;
+}
+
+#introduction {
+	margin-top: 10px;
+	width: 55%;
+}
+
+#user-dimensions {
+	margin-top: 10px;
+}
+
+#submit-row {
+	margin-top: 10px;
+}
+
+.content-left {
+	display: block;
+	float: left;
+	width: 55%;
+}
+
+.content-right {
+	display: block;
+	float: left;
+	width: 45%;
+}
+
+.input-column {
+	float:left;
+	width: 33%;
+	min-width: 180px;
+}
+
+.output-column {
+	float:left;
+	width: 50%;
+	min-width: 180px;
+}
+
+.output {
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+.button-row {
+	float: left;
+}
+
+.toggle-row {
+	float: left;
+	margin-left: 10px;
+}
+
+.output-value {
+	border-radius: 3px;
+	border-color: rgba(0,0,0,0.15);
+	border-top-color: rgba(0,0,0,0.2);
+	border-style: solid;
+	border-width: 1px;
+	color: #222;
+	font-size: 14px;
+	height: 38px;
+	outline: none;
+	padding: 9px 12px 9px 12px;
+}
+
+.calculated-value {
+	display: inline-block;
+}
+
+.output-row {
+	margin-top: 20px;
+}
+
+.output-bar {
+	margin-top: 20px;
+	height: 10px;
+	width:80%;
+}
+
+.output-yellow {
+	background-color: #e0a537;
+}
+.output-red {
+	background-color: #85352d;
+}
+.output-green {
+	background-color: #508c4a;
+}
+
+.note-row {
+	margin-top: 10px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.input-right-column {
+	display: block;
+	float:left;
+	width: 50%;
+}
+
+.input-row {
+	margin-top: 10px;
+}
+
+.input-label {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	margin: 0px;
+	cursor: default;
+	color: #aaa;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.output-label {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	margin: 0px;
+	cursor: default;
+	color: #aaa;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+.section-title {
+	/*text-transform: uppercase;*/
+	color: rgb(34, 34, 34);
+	position: relative;
+	font-size: 15px;
+	line-height: 21px;
+}
+
+.section-divider {
+	height: 40px;
+}
+
+.clear {
+	clear: both;
+}
+
+/* style of the label, when the associated input box has focus */
+.label-focus {
+	font-weight: 400;
+	color: #000;
+}
+
+#error {
+	color: rgb(255, 0, 0);
+	margin: 8px 0px 0px 20px;
+	min-height: 1px;
+}
+
+a {
+	color: #1994e6;
+	text-decoration: none;
+}
+a:hover {
+	color: #cfe31d;
+	text-decoration: underline;
+}
+
+.input {
+	padding-right: 40px;
+	border-radius: 3px;
+	border-color: rgba(0,0,0,0.15);
+	border-top-color: rgba(0,0,0,0.2);
+	border-style: solid;
+	border-width: 1px;
+	color: #222;
+	display: block;
+	font-size: 14px;
+	height: 38px;
+	outline: none;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	padding-left: 12px;
+	width: 75%;
+	background-color: white;
+	cursor: auto;
+	box-sizing: border-box;
+	text-indent: 0px;
+}
+
+.input-units {
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+	transform: translateY(-240%); /*140*/
+	position: relative;
+	right: -48%; /*50*/
+	z-index: 20;
+	display: block;
+	cursor: default;
+	font-size: 14px;
+	display: inline-block;
+}
+
+.output-units {
+	color: rgb(136, 136, 136);
+	margin-left: 15px;
+}
+
+.times {
+	font-size: 16px;
+	margin: 0px 5px 0px 5px;
+}
+
+.strong {
+	font-weight: 500;
+}
+
+#printView {
+	visibility: hidden;
+	display: none;
+}
+
+
+/******************************************************
+
+The CSS below is sourced from the greater Interwebs.
+Modified for use here, but credit where credit is due.
+
+*******************************************************/
+
+/* tooltips */
+span.question {
+	cursor: pointer;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background-color: #ccc;
+	line-height: 16px;
+	color: White;
+	font-size: 10px;
+	font-weight: bold;
+	border-radius: 8px;
+	text-align: center;
+	position: relative;
+	top: -1px;
+}
+span.question:hover { background-color: #999; }
+div.tooltip {
+	background-color: #ddd;
+	color: White;
+	position: absolute;
+	left: 25px;
+	top: -25px;
+	z-index: 1000000;
+	width: 250px;
+	border-radius: 5px;
+}
+div.tooltip:before {
+	border-color: transparent #ddd transparent transparent;
+	border-right: 6px solid #ddd;
+	border-style: solid;
+	border-width: 6px 6px 6px 0px;
+	content: "";
+	display: block;
+	height: 0;
+	width: 0;
+	line-height: 0;
+	position: absolute;
+	top: 40%;
+	left: -6px;
+}
+div.tooltip p {
+  margin: 10px;
+  color: #333;
+}
+
+
+/* Better styling of sub/super script */
+sub, sup {
+	/* Specified in % so that the sup/sup is the
+	right size relative to the surrounding text */
+	font-size: 75%;
+
+	/* Zero out the line-height so that it doesn't
+	interfere with the positioning that follows */
+	line-height: 0;
+
+	/* Where the magic happens: makes all browsers position
+	the sup/sup properly, relative to the surrounding text */
+	position: relative;
+
+	/* Note that if you're using Eric Meyer's reset.css, this
+	is already set and you can remove this rule */
+	vertical-align: baseline;
+}
+
+sup {
+	/* Move the superscripted text up */
+	top: -0.5em;
+}
+
+sub {
+	/* Move the subscripted text down, but only
+	half as far down as the superscript moved up */
+	bottom: -0.25em;
+}
+
+/* stylish button */
+.submitButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fff;
+	box-shadow:inset 0px 1px 0px 0px #fff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #fff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #fff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #fff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #fff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #fff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#fff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #fff;
+}
+.submitButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #fff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #fff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #fff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #fff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #fff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #fff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#fff',GradientType=0);
+	background-color:#f6f6f6;
+	text-decoration: none;
+	color: #ccc;
+}
+.submitButton:active {
+	position:relative;
+	top:1px;
+}
+.submitButtonDisabled {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #fff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #fff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #fff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #fff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #fff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #fff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#fff',GradientType=0);
+	background-color:#f6f6f6;
+	text-decoration: none;
+	color: #ccc;
+}
+
